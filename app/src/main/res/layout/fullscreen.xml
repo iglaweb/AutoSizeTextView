@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ru.igla.widget.autosizetextview.FullscreenActivity"
+    android:id="@+id/activityRoot"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <ru.igla.autosizetextview.AutoSizeTextView
+        android:id="@+id/tvFullscreen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Long ancestry"
+        android:textColor="@android:color/black"
+        android:background="@android:color/white"
+        android:textSize="500sp"
+        android:maxLines="500"
+        android:gravity="center"
+        android:ellipsize="@null"
+        android:autoText="false"
+        android:autoLink="none"
+        android:linksClickable="false"
+        android:singleLine="false"
+        android:padding="0px"
+        android:includeFontPadding="false"
+        android:textAlignment="center"
+        android:typeface="normal"
+        android:layout_gravity="center"
+        android:textStyle="normal"
+        />
+</RelativeLayout>
