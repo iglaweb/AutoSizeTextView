@@ -9,7 +9,7 @@ Based on solutions listed here http://stackoverflow.com/questions/5033012/auto-s
 - Allows to set minimum text size
 - Text size is adjusted automatically after rotation
 - Ellipsis text in case of text length exceeds predefined value
-– No bugs with 4.0.3 Ice Cream Sandwich
+- No bugs with 4.0.3 Ice Cream Sandwich
 
 
 
