@@ -4,6 +4,14 @@ An Android TextView that automatically fits its font and line count based on its
 Based on solutions listed here http://stackoverflow.com/questions/5033012/auto-scale-textview-text-to-fit-within-bounds
 
 
+## Main points
+
+- Allows to set minimum text size
+- Text size is adjusted automatically after rotation
+- Ellipsis text in case of text length exceeds predefined value
+– No bugs with 4.0.3 Ice Cream Sandwich
+
+
 
 Use the built in Widget in code or XML:
 
