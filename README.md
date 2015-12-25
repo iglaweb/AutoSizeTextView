@@ -1,10 +1,14 @@
 # AutoSizeTextView
+
+[![Build Status][build-status-svg]][build-status-link]
+[![License][license-svg]][license-link]
+
 An Android TextView that automatically fits its font and line count based on its available size and content
 
 Based on solutions listed here http://stackoverflow.com/questions/5033012/auto-scale-textview-text-to-fit-within-bounds
 
 
-## Main points
+## Overview
 
 - Allows to set minimum text size
 - Text size is adjusted automatically after rotation
@@ -52,3 +56,8 @@ Use the built in Widget in code or XML:
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+ [build-status-svg]: https://travis-ci.org/iglaweb/AutoSizeTextView.svg?branch=dev
+ [build-status-link]: https://travis-ci.org/iglaweb/AutoSizeTextView
+ [license-svg]: https://img.shields.io/badge/license-APACHE-lightgrey.svg
+ [license-link]: https://github.com/iglaweb/AutoSizeTextView/blob/dev/LICENSE

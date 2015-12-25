@@ -3,10 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="ru.igla.widget.autosizetextview.FullscreenActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activityRoot"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
-    <ru.igla.autosizetextview.AutoSizeTextView
+    <ru.igla.widget.AutoSizeTextView
         android:id="@+id/tvFullscreen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,5 +28,6 @@
         android:typeface="normal"
         android:layout_gravity="center"
         android:textStyle="normal"
+        app:minTxtSize="8sp"
         />
 </RelativeLayout>

@@ -10,7 +10,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
-import ru.igla.autosizetextview.AutoSizeTextView;
+import ru.igla.widget.AutoSizeTextView;
 
 public class FullscreenActivity extends Activity {
 

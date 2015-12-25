@@ -1,4 +1,4 @@
-package ru.igla.autosizetextview;
+package ru.igla.widget;
 
 /**
  * Created by Lashkov Igor on 16/06/15.
@@ -7,6 +7,7 @@ package ru.igla.autosizetextview;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -18,6 +19,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
+
 
 
 /**
@@ -35,11 +37,13 @@ public class AutoSizeTextView extends TextView {
 	private static final float DEFAULT_MIN_TEXT_SIZE = 8.0f; //sp
 
 
+
+
 	private static final int NO_LINE_LIMIT = -1;
 	private final RectF _availableSpaceRect = new RectF();
 
 	private float mMaxTextSize;
-	private float mMinTextSize;
+	private float mMinTextSize = -1;
 	private int mMaxLines;
 	private boolean mIsInitialized = false;
 
@@ -56,21 +60,38 @@ public class AutoSizeTextView extends TextView {
 
 	public AutoSizeTextView(final Context context, final AttributeSet attrs, final int defStyle) {
 		super(context, attrs, defStyle);
-		Init();
+		Init(context, attrs, defStyle);
 	}
 
-	private void Init(){
+	private void Init(final Context c, final AttributeSet attrs, final int defStyle){
+
+		//check min text size availability
+		if(attrs != null){
+			TypedArray a = c.obtainStyledAttributes(attrs, R.styleable.AutoSizeTextView, defStyle, 0);
+			try {
+				mMinTextSize = a.getDimension(R.styleable.AutoSizeTextView_minTxtSize, -1);
+			} finally {
+				a.recycle();
+			}
+		}
+
+		if(mMinTextSize == -1){
+			mMinTextSize = TypedValue.applyDimension(
+					TypedValue.COMPLEX_UNIT_SP,
+					DEFAULT_MIN_TEXT_SIZE, // using the minimal recommended font size
+					getResources().getDisplayMetrics()
+			);
+		}
+
+
 		//due to problem of big font size, http://stackoverflow.com/questions/6253528/font-size-too-large-to-fit-in-cache
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB){
 			setLayerType(View.LAYER_TYPE_SOFTWARE, null);
 		}
 
-		// using the minimal recommended font size
-		mMinTextSize = TypedValue.applyDimension(
-				TypedValue.COMPLEX_UNIT_SP,
-				DEFAULT_MIN_TEXT_SIZE,
-				getResources().getDisplayMetrics()
-		);
+
+
+
 
 		mMaxTextSize = getTextSize();
 
@@ -149,7 +170,9 @@ public class AutoSizeTextView extends TextView {
 	public void setTextSize(final int unit,final float size) {
 		final Context c = getContext();
 
-		Resources r = c == null ? Resources.getSystem() : c.getResources();
+		Resources r = c == null ?
+				Resources.getSystem() :
+				c.getResources();
 
 		mMaxTextSize = TypedValue.applyDimension(unit,size,r.getDisplayMetrics());
 		if(mFontSizeUtils.getSizeTester() != null){
@@ -240,15 +263,6 @@ public class AutoSizeTextView extends TextView {
 	 */
 	@Override
 	protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
-
-		/*int l = getCompoundPaddingLeft();
-		int r = getCompoundPaddingRight();
-		int t = getCompoundPaddingTop();
-		int b = getCompoundPaddingBottom();
-
-		int widthLimit = (right - left) - getCompoundPaddingLeft() - getCompoundPaddingRight();
-		int heightLimit = (bottom - top) - getCompoundPaddingBottom() - getCompoundPaddingTop();*/
-
 		super.onLayout(changed, left, top, right, bottom);
 	}
 

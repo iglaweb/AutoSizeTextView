@@ -1,4 +1,4 @@
-package ru.igla.autosizetextview;
+package ru.igla.widget;
 
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -123,16 +123,12 @@ public class FontSizeUtils {
         final float avWidth = availableSpace.width();
 
 
-
-
         //check if longest word fits width
         CharSequence t = TextUtils.ellipsize(word, tp, avWidth, TextUtils.TruncateAt.END);
         if(!TextUtils.equals(word, t)){ //if we have a truncated text
             return false; // too big
         }
 
-
-		float size = tp.getTextSize();
 
         if(maxHeight >= avHeight ||
                 maxWidth >= avWidth ||

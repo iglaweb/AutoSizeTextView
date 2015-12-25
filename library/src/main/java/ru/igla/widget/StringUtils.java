@@ -1,4 +1,4 @@
-package ru.igla.autosizetextview;
+package ru.igla.widget;
 
 import android.text.TextPaint;
 import android.text.TextUtils;
