@@ -45,7 +45,7 @@ Issues
 
 If you find any problems or would like to suggest a feature, please
 feel free to file an issue on github at
-http://github.com/mosabua/maven-android-sdk-deployer/issues
+https://github.com/iglaweb/AutoSizeTextView/issues
 
 ## License
 
