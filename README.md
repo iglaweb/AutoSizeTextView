@@ -1,7 +1,8 @@
 # AutoSizeTextView
 
+[![JitPack][jitpack-svg]][jitpack-link]
 [![Build Status][build-status-svg]][build-status-link]
-[![License][license-svg]][license-link]
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 An Android TextView that automatically fits its font and line count based on its available size and content
 
@@ -14,6 +15,38 @@ Based on solutions listed here http://stackoverflow.com/questions/5033012/auto-s
 - Widget allows to set minimum text size
 - Text size is also adjusted automatically after rotation
 - Ellipsis text in case of text length exceeds predefined value
+
+
+# Gradle Dependency
+
+
+#### Repository
+
+Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
+
+```gradle
+allprojects {
+	repositories {
+		...
+		maven { url "https://jitpack.io" }
+	}
+}
+```
+
+#### Dependency
+
+Add this to your module's `build.gradle` file:
+
+```gradle
+dependencies {
+	compile 'com.github.iglaweb:AutoSizeTextView:v1.0'
+	}
+}
+```
+
+
+
+
 
 
 
@@ -67,3 +100,5 @@ https://github.com/iglaweb/AutoSizeTextView/issues
  [build-status-link]: https://travis-ci.org/iglaweb/AutoSizeTextView
  [license-svg]: https://img.shields.io/badge/license-APACHE-lightgrey.svg
  [license-link]: https://github.com/iglaweb/AutoSizeTextView/blob/dev/LICENSE
+ [jitpack-svg]: https://img.shields.io/github/release/iglaweb/autosizetextview.svg?label=jitpack
+ [jitpack-link]: https://jitpack.io/#iglaweb/autosizetextview
