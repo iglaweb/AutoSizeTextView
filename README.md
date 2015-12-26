@@ -10,10 +10,10 @@ Based on solutions listed here http://stackoverflow.com/questions/5033012/auto-s
 
 ## Overview
 
-- Allows to set minimum text size
-- Text size is adjusted automatically after rotation
+- Android 4.0.3+ support
+- Widget allows to set minimum text size
+- Text size is also adjusted automatically after rotation
 - Ellipsis text in case of text length exceeds predefined value
-- No bugs with 4.0.3 Ice Cream Sandwich
 
 
 
@@ -40,6 +40,12 @@ Use the built in Widget in code or XML:
         />
 ```
 
+Issues
+------
+
+If you find any problems or would like to suggest a feature, please
+feel free to file an issue on github at
+http://github.com/mosabua/maven-android-sdk-deployer/issues
 
 ## License
 

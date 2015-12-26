@@ -15,7 +15,6 @@ import ru.igla.widget.AutoSizeTextView;
 public class FullscreenActivity extends Activity {
 
 	private RelativeLayout activityRoot;
-
     public static final String FULLSCREEN_TEXT = "fullscreen_text";
 
 	@Override
@@ -29,7 +28,6 @@ public class FullscreenActivity extends Activity {
     void initiateActivity(){
         LayoutInflater inflater = (LayoutInflater)getSystemService
                 (Context.LAYOUT_INFLATER_SERVICE);
-
         activityRoot = (RelativeLayout)inflater.inflate(R.layout.fullscreen, null);
 
         Bundle extras = getIntent().getExtras();
@@ -38,8 +36,6 @@ public class FullscreenActivity extends Activity {
         }
 
         AutoSizeTextView textView = (AutoSizeTextView)activityRoot.findViewById(R.id.tvFullscreen);
-        //FontUtils.setRobotoFont(textView);
-
         String text = extras.getString(FULLSCREEN_TEXT);
         if(TextUtils.isEmpty(text)){
             return;
